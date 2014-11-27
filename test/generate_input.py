@@ -28,7 +28,7 @@ class GenerateTestInput:
 
     @staticmethod
     def generate_char_repetitions(s, length):
-        new_str=[]
+        new_str = []
         for i in range(length):
             new_str.append([s[i]*random.randint(0, length)])
 
