@@ -33,32 +33,3 @@ class VowelSubstitutions:
                 return word
 
         return None
-                 
-
-    def generateVowelSubstitutionHelper(self, s):
-        length = len(s)
-        return self.generateVowelSubstitutions(list(s), 0, length)
-
-    def generateVowelSubstitutions(self, s, index, length):
-        currentStr = ''.join(s)
-        if currentStr in words:
-            return currentStr
-        while(index < length and (s[index] not in self.vowels)):
-            index+=1
-        
-        if(index >= length):
-            return None
-        
-        for v in self.vowels:
-            s[index] = v
-            match = self.generateVowelSubstitutions(s, index+1, length)
-            if match != None:
-                return match
-
-        return None
-
-
-            
-        
-                        
-        
