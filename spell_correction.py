@@ -3,27 +3,27 @@ import generate_repetitions as gr
 import vowel_substitutions as vs
 from data import words
 
-def setCharsLenToTwo(s):
+def limit_chars_len_to_two(s):
      return ''.join([j for i,j in enumerate(s) if i<2 or (s[i-1] != s[i-2] or s[i-1] != j)])  
 
 vowelSubs = vs.VowelSubstitutions()
 
 while True:
-    inputStr = raw_input("> ").lower()
-    if inputStr in words:
-        print inputStr
+    input_str = raw_input("> ").lower()
+    if input_str in words:
+        print input_str
         continue
 
-    inputStr = setCharsLenToTwo(inputStr)    
-    if inputStr in words:
-        print inputStr
+    inputStr = limit_chars_len_to_two(input_str)    
+    if input_str in words:
+        print input_str
         continue
 
     repetetions = gr.GenerateRepetitions()
-    suggestion = repetetions.generatePossibleCandidatesHelper(inputStr)
+    suggestion = repetetions.generate_possible_candidates_helper(input_str)
     if suggestion == None:
         for candidate in repetetions.candidates:
-            suggestion = vowelSubs.matchVowelSubstitutions(candidate)
+            suggestion = vowelSubs.match_vowel_substitutions(candidate)
             if suggestion != None:
                 break
 
