@@ -1,14 +1,14 @@
-from data import words
+from data import words, VOWELS
 from collections import defaultdict
 
-class VowelSubstitutions:
-    vowels = set(['a', 'e', 'i', 'o', 'u'])
+class VowelReplacer:
+    VOWELS = set(['a', 'e', 'i', 'o', 'u'])
     consonents_word_map = defaultdict(list)
     def __init__(self):
         self.generate_consonent_word_map()
 
     def remove_vowels_from_word(self, word):
-        return ''.join([j for i,j in enumerate(word) if word[i] not in self.vowels])
+        return ''.join([j for i,j in enumerate(word) if word[i] not in VOWELS])
 
     def generate_consonent_word_map(self):
         for word in words:
@@ -17,7 +17,7 @@ class VowelSubstitutions:
 
     def match_word_to_input(self, input_str, word, length):
         for i in range(length):
-            if input_str[i] != word[i] and (input_str[i] not in self.vowels or word[i] not in self.vowels):
+            if (input_str[i] != word[i]) and (input_str[i] not in VOWELS or word[i] not in VOWELS):
                 return False
 
         return True
