@@ -1,5 +1,5 @@
 from data import words
-class GenerateRepetitions:
+class RepetitionGenerator:
     candidates = []
     
     def __init__(self):
@@ -15,7 +15,7 @@ class GenerateRepetitions:
                 return None
         
         match = self.generate_possible_candidates(s, b, length-1)
-        if match != None:
+        if match is not None:
             return match
         if s[length-1] == s[length-2]:
             b[length-1] = False

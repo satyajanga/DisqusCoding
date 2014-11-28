@@ -1,20 +1,20 @@
 import random
 
-class GenerateTestInput:
+class TestInputGenerator:
     
     @staticmethod
     def generate_test_input_from_word(word):
         length = len(word)
-        GenerateTestInput.generate_random_case(word, length)
-        GenerateTestInput.generate_vowel_mismatches(word, length)
-        return GenerateTestInput.generate_char_repetitions(word, length)
+        TestInputGenerator.generate_random_case(word, length)
+        TestInputGenerator.generate_vowel_mismatches(word, length)
+        return TestInputGenerator.generate_char_repetitions(word, length)
 
     @staticmethod
     def generate_random_case(s, length):
         for i in range(length):
-            if 0 == random.randint(0,2):
+            if random.randint(0,1) is 0:
                 s[i] = s[i].lower()
-            else
+            else:
                 s[i] = s[i].upper()
 
     @staticmethod
@@ -24,12 +24,15 @@ class GenerateTestInput:
         num_of_vowels = len(vowels)
         for i in range(length):
             if s[i] in vowel_set:
-                s[i] = vowels[random.randint(0, num_of_vowels)]
+                s[i] = vowels[random.randint(0, num_of_vowels-1)]
 
     @staticmethod
     def generate_char_repetitions(s, length):
         new_str = []
         for i in range(length):
-            new_str.append([s[i]*random.randint(0, length)])
+            if random.randint(0,2) is 0:
+                new_str += [s[i]]*random.randint(1, length)
+            else:
+                new_str+= [s[i]]
 
-        
+        return ''.join(new_str)
