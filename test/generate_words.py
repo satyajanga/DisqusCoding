@@ -1,4 +1,4 @@
-from generate_input import TestInputGenerator
+from test_input_generator import TestInputGenerator
 
 import sys
 sys.path.append("../")

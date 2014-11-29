@@ -1,11 +1,14 @@
-DisqusCoding
+Spell Suggester
 ============
+
 
 Spell Suggester:
 
     1) It reads the /usr/share/dict/words and stores in a SET (see data/__init__.py)
 
     2) words are imported to all of the Classes for to be accessible
+
+    3) Made an assumption about the number of continous repeated charcters is not more than 2 and the input is adjusted accordingly by removing the extra characters. 
 
 RepetitionGenerator:
 

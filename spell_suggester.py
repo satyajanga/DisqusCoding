@@ -4,7 +4,7 @@ from vowel_replacer import VowelReplacer
 from data import words, VOWELS
 
 class SpellSuggester:
-    vowel_subs = vs.VowelReplacer()
+    vowel_subs = VowelReplacer()
     
     def limit_chars_len_to_two(self, s):
         return ''.join([j for i,j in enumerate(s) if (i<2 or (j is not s[i-1] or j is not s[i-2])) or (i> 3 and j in VOWELS and s[i-3] is not j )])  
@@ -35,7 +35,7 @@ class SpellSuggester:
 
 
     def process_and_suggest_spelling(self, input_str):
-        repetitions = gr.RepetitionGenerator()
+        repetitions = RepetitionGenerator()
         suggestion = repetitions.generate_possible_candidates_helper(input_str)
         if suggestion is None:
             for candidate in repetitions.candidates:
