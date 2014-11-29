@@ -32,7 +32,8 @@ How To Run:
    
         it  generates input words from words in data
 
-    Inside the test directory 
+    For verifying on Auto generated input go to the test directory 
+    
     python generate_input.py | python ../main.py > suggestions.txt
     
-        It takes quite some time for it to run. Due to recursion depth with repetition generations by looking at suggestions.txt you can verify there is no "NO SUGGESTION" in the output.
+    It takes quite some time for it to run. Due to recursion depth with repetition generations by looking at suggestions.txt you can verify there is no "NO SUGGESTION" in the output.
