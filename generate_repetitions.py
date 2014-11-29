@@ -17,7 +17,7 @@ class RepetitionGenerator:
         match = self.generate_possible_candidates(s, b, length-1)
         if match is not None:
             return match
-        if s[length-1] == s[length-2]:
+        if s[length-1] is s[length-2]:
             b[length-1] = False
             match = self.generate_possible_candidates(s, b, length-1)
             b[length-1] = True
