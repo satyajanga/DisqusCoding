@@ -40,7 +40,7 @@ class SpellSuggester:
         if suggestion is None:
             for candidate in repetitions.candidates:
                 suggestion = self.vowel_subs.match_vowel_substitutions(candidate)
-                if suggestion != None:
+                if suggestion is not None:
                     return suggestion
         else:
             return suggestion

@@ -31,12 +31,12 @@ How To Run:
 
     To generate test input go to test directory and run 
    
-    python generate_input.py 
+    python generate_words.py 
    
         it  generates input words from words in data
 
     For verifying on Auto generated input go to the test directory 
     
-    python generate_input.py | python ../main.py > suggestions.txt
+    python generate_words.py | python ../main.py > suggestions.txt
     
     It takes quite some time for it to run. Due to recursion depth with repetition generations by looking at suggestions.txt you can verify there is no "NO SUGGESTION" in the output.
